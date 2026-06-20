@@ -18,7 +18,7 @@ const PELICULAS = [
       "accion",
       "aventura"
     ],
-    "imagen": "https://image.tmdb.org/t/p/w342/tECLVwLCMexSkls33RTCwedRZ6d.jpg"
+    "imagen": "https://placehold.co/180x260/1a1a2e/e0e0ff?text=Indiana+Jones"
   },
   {
     "titulo": "La momia",
@@ -685,7 +685,7 @@ const PELICULAS = [
       "drama",
       "suspenso"
     ],
-    "imagen": "https://image.tmdb.org/t/p/w342/gWPkUFGlO7ZIiArUcWRBmvAwVjB.jpg"
+    "imagen": "https://placehold.co/180x260/1a1a2e/e0e0ff?text=Laberinto"
   },
   {
     "titulo": "El mago de Oz",

@@ -1,0 +1,40 @@
+[
+  {
+    "titulo": "Indiana Jones y los cazadores del arca perdida",
+    "imagen": "https://image.tmdb.org/t/p/w342/tECLVwLCMexSkls33RTCwedRZ6d.jpg",
+    "encontradoComo": "En busca del arca perdida",
+    "metodo": "alternativo+año (es)"
+  },
+  {
+    "titulo": "La gran escapada",
+    "imagen": "https://image.tmdb.org/t/p/w342/kJc31ytAGLTxBNHgCfNcwiPgIC9.jpg",
+    "encontradoComo": "La gran escapada",
+    "metodo": "titulo sin año (es)"
+  },
+  {
+    "titulo": "Muerto de risa",
+    "imagen": "https://image.tmdb.org/t/p/w342/ycugINuCK74BJFsVUWIbs5rQWs5.jpg",
+    "encontradoComo": "Muerto de risa",
+    "metodo": "titulo sin año (es)"
+  },
+  {
+    "titulo": "Parasite",
+    "imagen": "https://image.tmdb.org/t/p/w342/sCyTgUNzvAfMFPvPFNFVwnMO0Hm.jpg",
+    "encontradoComo": "Parásito",
+    "metodo": "titulo sin año (es)"
+  },
+  {
+    "titulo": "Pan's Labyrinth adaptación",
+    "imagen": "https://image.tmdb.org/t/p/w342/gWPkUFGlO7ZIiArUcWRBmvAwVjB.jpg",
+    "encontradoComo": "El laberinto del fauno",
+    "metodo": "alternativo+año (es)"
+  },
+  {
+    "titulo": "Tiburón blanco: El rey de los mares",
+    "imagen": null
+  },
+  {
+    "titulo": "El planeta de los océanos",
+    "imagen": null
+  }
+]
