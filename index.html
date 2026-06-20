@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Congaflix</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Header -->
+  <header class="app-header">
+    <h1>🎬 <span>Congaflix</span></h1>
+    <p>Robá cartas de géneros y descubrí qué película te toca ver hoy</p>
+  </header>
+
+  <!-- Fase tag -->
+  <div id="fase-tag" class="fase-tag fase-inicio">Fase: repartir</div>
+
+  <!-- Status -->
+  <div id="status" style="display:none"></div>
+
+  <!-- Mazo -->
+  <div class="mazo-fila">
+    <div class="mazo-pila">
+      <span class="num" id="mazo-count">14</span>
+      <span>mazo</span>
+    </div>
+    <div class="descarte-pila">
+      <span class="num" id="descarte-count">0</span>
+      <span>descartadas</span>
+    </div>
+    <p class="mazo-info" id="mazo-info">
+      Repartite 5 cartas de géneros, cambiá hasta 2 y encontrá tu película ideal.
+    </p>
+  </div>
+
+  <!-- Mano -->
+  <div id="mano"></div>
+
+  <!-- Acciones -->
+  <div id="acciones">
+    <button class="primario" onclick="repartir()">🃏 Repartir cartas</button>
+  </div>
+
+  <!-- Resultados -->
+  <section id="seccion-resultado" style="display:none">
+    <div class="resultado-header">
+      <h2>Películas para tu mano</h2>
+      <div class="resumen-generos" id="resumen-generos"></div>
+    </div>
+    <div id="resultados-lista"></div>
+  </section>
+
+</div>
+
+<!-- Scripts: primero los datos, luego la lógica -->
+<script src="movies.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
