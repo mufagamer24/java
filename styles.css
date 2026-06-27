@@ -2,27 +2,27 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --fondo:       #0d0d1a;
-  --fondo-card:  #14142b;
-  --fondo-alt:   #1a1a30;
-  --borde:       #2e2e52;
-  --borde-hover: #4a4a7a;
-  --acento:      #7c6fff;
-  --acento-dim:  #3d3880;
-  --text-1:      #f0eeff;
-  --text-2:      #9b98bb;
-  --text-3:      #5c5a7a;
-  --match:       #2a4a3e;
+  --fondo:       #071133;
+  --fondo-card:  #0b0b0b;
+  --fondo-alt:   #0e1a3a;
+  --borde:       #d4af37;
+  --borde-hover: #ffd66b;
+  --acento:      #d4af37;
+  --acento-dim:  #3a2e00;
+  --text-1:      #ffffff;
+  --text-2:      #b8b0c8;
+  --text-3:      #5a5880;
+  --match:       #0d2a1a;
   --match-text:  #5affc0;
   --foraneo:     #3a2a2a;
   --foraneo-text:#ff9090;
-  --amarillo:    #f5c842;
+  --amarillo:    #ffd66b;
   --rojo:        #e05555;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: Georgia, serif;
 }
 
 body {
-  background: var(--fondo);
+  background: linear-gradient(180deg, var(--fondo) 0%, #2b0202 100%);
   color: var(--text-1);
   min-height: 100vh;
 }
@@ -46,15 +46,17 @@ body {
   letter-spacing: -0.02em;
   color: var(--text-1);
   margin-bottom: 0.35rem;
+  font-family: Georgia, serif;
 }
 
 .app-header h1 span {
-  color: var(--acento);
+  color: var(--amarillo);
 }
 
 .app-header p {
   font-size: 0.95rem;
   color: var(--text-2);
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 /* ── Fase tag ──────────────────────────────────────────────────── */
@@ -67,20 +69,22 @@ body {
   padding: 3px 12px;
   border-radius: 99px;
   margin-bottom: 1.25rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
-.fase-inicio   { background: #2a2a00; color: var(--amarillo); }
-.fase-descartar{ background: #1a1a40; color: var(--acento); }
-.fase-resultado{ background: #0d2a1a; color: var(--match-text); }
+.fase-inicio    { background: rgba(212,175,55,0.12); color: var(--amarillo);    border: 1px solid rgba(212,175,55,0.3); }
+.fase-descartar { background: rgba(212,175,55,0.08); color: var(--borde-hover); border: 1px solid rgba(212,175,55,0.2); }
+.fase-resultado { background: rgba(90,255,192,0.08); color: var(--match-text);  border: 1px solid rgba(90,255,192,0.2); }
 
 /* ── Status bar ────────────────────────────────────────────────── */
 #status {
   font-size: 0.875rem;
   color: var(--text-2);
-  background: var(--fondo-alt);
-  border: 1px solid var(--borde);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,175,55,0.15);
   border-radius: 10px;
   padding: 0.6rem 1rem;
   margin-bottom: 1.25rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 #status strong { color: var(--text-1); }
 
@@ -95,38 +99,45 @@ body {
 .mazo-pila {
   width: 68px; height: 90px;
   border-radius: 10px;
-  border: 1px solid var(--borde);
+  background: linear-gradient(180deg, #2c0b0b, #3b0f0f);
+  border: 2px solid rgba(212,175,55,0.35);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 3px; font-size: 0.7rem; font-weight: 600;
-  color: var(--text-2);
-  background: var(--fondo-card);
+  color: var(--amarillo);
   flex-shrink: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 .mazo-pila .num {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--acento);
+  color: var(--amarillo);
 }
+
 .descarte-pila {
   width: 68px; height: 90px;
   border-radius: 10px;
-  border: 1px dashed var(--borde);
+  background: linear-gradient(180deg, #2b0f12, #45131a);
+  border: 2px solid rgba(255,138,128,0.2);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 3px; font-size: 0.7rem;
-  color: var(--text-3);
+  color: rgba(255,138,128,0.7);
   flex-shrink: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 .descarte-pila .num {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-3);
+  color: rgba(255,138,128,0.8);
 }
+
 .mazo-info {
   font-size: 0.875rem;
   color: var(--text-2);
   line-height: 1.5;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 /* ── Mano de cartas ────────────────────────────────────────────── */
@@ -140,28 +151,30 @@ body {
 .carta {
   width: 115px;
   min-height: 155px;
-  border-radius: 14px;
-  border: 1px solid var(--borde);
-  background: var(--fondo-card);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #070707, #0e0e0e);
+  border: 3px solid var(--borde);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.7);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   padding: 14px 10px;
   cursor: pointer;
   position: relative;
-  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   user-select: none;
 }
 
 .carta:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 32px 64px rgba(0,0,0,0.85);
   border-color: var(--borde-hover);
-  background: var(--fondo-alt);
 }
 
 .carta.seleccionada {
-  border: 2px solid var(--rojo);
-  transform: translateY(-10px);
-  background: #1f0d0d;
+  border: 3px solid var(--rojo);
+  transform: translateY(-12px);
+  background: linear-gradient(180deg, #0f0505, #1a0808);
+  box-shadow: 0 32px 64px rgba(224,85,85,0.3);
 }
 
 .carta-icono {
@@ -171,11 +184,14 @@ body {
 }
 
 .carta-nombre {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-align: center;
-  color: var(--text-1);
+  color: var(--borde);
   line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 .marca-descarte {
@@ -188,6 +204,7 @@ body {
   font-size: 11px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
   border: 2px solid var(--fondo);
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 /* ── Botones ───────────────────────────────────────────────────── */
@@ -201,24 +218,27 @@ body {
 button {
   padding: 9px 20px;
   border-radius: 10px;
-  border: 1px solid var(--borde);
+  border: 1px solid rgba(212,175,55,0.3);
   background: transparent;
   color: var(--text-1);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  font-family: inherit;
+  font-family: Georgia, serif;
+  letter-spacing: 0.02em;
   transition: background 0.12s, border-color 0.12s, opacity 0.12s;
 }
-button:hover { background: var(--fondo-alt); border-color: var(--borde-hover); }
+button:hover { background: rgba(212,175,55,0.08); border-color: var(--borde); }
 button:disabled { opacity: 0.3; cursor: default; }
 
 button.primario {
-  background: var(--acento-dim);
-  border-color: var(--acento);
-  color: #fff;
+  background: linear-gradient(180deg, #2c0b0b, #3b0f0f);
+  border: 2px solid var(--amarillo);
+  color: var(--amarillo);
 }
-button.primario:hover { background: var(--acento); }
+button.primario:hover {
+  background: linear-gradient(180deg, #3b0f0f, #4b1313);
+}
 
 /* ── Sección resultado ─────────────────────────────────────────── */
 #seccion-resultado {
@@ -245,10 +265,13 @@ button.primario:hover { background: var(--acento); }
   padding: 3px 12px;
   border-radius: 99px;
   font-size: 0.8rem;
-  font-weight: 600;
-  background: var(--acento-dim);
-  color: #d0cbff;
-  border: 1px solid var(--acento);
+  font-weight: 700;
+  background: rgba(212,175,55,0.1);
+  color: var(--amarillo);
+  border: 1px solid rgba(212,175,55,0.3);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 /* ── Lista de películas ────────────────────────────────────────── */
@@ -261,13 +284,17 @@ button.primario:hover { background: var(--acento); }
 .pelicula-card {
   display: flex;
   gap: 1rem;
-  background: var(--fondo-card);
-  border: 1px solid var(--borde);
-  border-radius: 14px;
+  background: linear-gradient(180deg, #0b0b0b, #0e0e0e);
+  border: 2px solid rgba(212,175,55,0.2);
+  border-radius: 12px;
   padding: 1rem;
-  transition: border-color 0.15s;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
-.pelicula-card:hover { border-color: var(--borde-hover); }
+.pelicula-card:hover {
+  border-color: rgba(212,175,55,0.5);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.7);
+}
 
 .pelicula-imagen {
   flex-shrink: 0;
@@ -275,9 +302,10 @@ button.primario:hover { background: var(--acento); }
 }
 .pelicula-imagen img {
   width: 70px; height: 100px;
-  border-radius: 8px;
+  border-radius: 6px;
   object-fit: cover;
   display: block;
+  border: 1px solid rgba(212,175,55,0.2);
 }
 
 .pelicula-info { flex: 1; min-width: 0; }
@@ -291,20 +319,23 @@ button.primario:hover { background: var(--acento); }
 }
 .pelicula-titulo {
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-1);
+  font-weight: 700;
+  color: var(--amarillo);
+  font-family: Georgia, serif;
 }
 .pelicula-anio {
   font-size: 0.8rem;
   color: var(--text-3);
   font-weight: 500;
   flex-shrink: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 .pelicula-desc {
   font-size: 0.85rem;
   color: var(--text-2);
   line-height: 1.55;
   margin-bottom: 0.75rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 .pelicula-generos {
@@ -316,15 +347,20 @@ button.primario:hover { background: var(--acento); }
   padding: 2px 10px;
   border-radius: 99px;
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 .chip-genero.match {
   background: var(--match);
   color: var(--match-text);
+  border: 1px solid rgba(90,255,192,0.2);
 }
 .chip-genero.foraneo {
   background: var(--foraneo);
   color: var(--foraneo-text);
+  border: 1px solid rgba(255,144,144,0.2);
 }
 
 .sin-resultados {
@@ -332,12 +368,13 @@ button.primario:hover { background: var(--acento); }
   color: var(--text-2);
   padding: 2rem;
   font-size: 0.95rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 /* ── Responsive ────────────────────────────────────────────────── */
 @media (max-width: 540px) {
   .carta { width: calc(33.33% - 9px); min-height: 130px; }
   .carta-icono { font-size: 1.6rem; }
-  .carta-nombre { font-size: 0.72rem; }
+  .carta-nombre { font-size: 0.65rem; }
   .pelicula-imagen { display: none; }
 }
